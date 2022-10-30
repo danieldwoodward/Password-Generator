@@ -28,7 +28,7 @@ const specialCharachters = [
   ".",
 ];
 //numeric charachters array
-const numeriCharachters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+const numericCharachters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 //lower case charachters array
 const lowerCasedChars = [
@@ -95,8 +95,8 @@ function passwordOptions() {
     "How long would you like your password to be between 8-128 charachters?"
   );
 
-  if (passwordLength < 8 || passwordLength > 128) {
-    alert("Your password is not within specified perameters.");
+  if (passwordLength < 8 || passwordLength > 128 || passwordLength !== "number") {
+    alert("Your password is not within the specified perameters.");
     return "Your Secure Password";
   }
   let uppers = confirm("Would you like upper-case letters in your password?");
@@ -131,7 +131,7 @@ function generatePassword() {
   }
 
   if (options.number) {
-    bigArray = bigArray.concat(numeriCharachters);
+    bigArray = bigArray.concat(numericCharachters);
   }
 
   if (options.spec) {
