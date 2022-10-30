@@ -109,6 +109,13 @@ function passwordOptions() {
 
   let options = { passwordLength, uppers, lowers, number, spec };
 
+  if (uppers === false && lowers === false && number === false && spec === false) {
+    alert("You did not pick any values for your password. Try again.")
+    return "Your Secure Password";
+  }
+
+  alert("Congratulations your new password has been generated! Click button to show")
+
   return options;
 }
 function generatePassword() {
