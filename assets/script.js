@@ -95,7 +95,7 @@ function passwordOptions() {
     "How long would you like your password to be between 8-128 charachters?"
   );
 
-  if (passwordLength < 8 || passwordLength > 128 || passwordLength !== "number") {
+  if (passwordLength < 8 || passwordLength > 128) {
     alert("Your password is not within the specified perameters.");
     return "Your Secure Password";
   }
@@ -109,12 +109,19 @@ function passwordOptions() {
 
   let options = { passwordLength, uppers, lowers, number, spec };
 
-  if (uppers === false && lowers === false && number === false && spec === false) {
-    alert("You did not pick any values for your password. Try again.")
+  if (
+    uppers === false &&
+    lowers === false &&
+    number === false &&
+    spec === false
+  ) {
+    alert("You did not pick any values for your password. Try again.");
     return "Your Secure Password";
   }
 
-  alert("Congratulations your new password has been generated! Click button to show")
+  alert(
+    "Congratulations your new password has been generated! Click button to show"
+  );
 
   return options;
 }
